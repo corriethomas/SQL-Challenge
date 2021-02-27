@@ -59,6 +59,10 @@ INNER JOIN salaries ON
 salaries.emp_no=employees.emp_no;
 
 -- 2. List first name, last name, and hire date for employees who were hired in 1986
+SELECT first_name, last_name, hire_date
+FROM employees
+WHERE hire_date between '1986-01-01' and '1986-12-31'
+
 -- 3. List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name
 -- 4. List the department of each employee with the following information: employee number, last name, first name, and department name
 -- 5. List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
