@@ -85,11 +85,16 @@ INNER JOIN departments ON departments.dept_no=dept_emp.dept_no;
 SELECT first_name, last_name, sex
 FROM employees
 WHERE first_name='Hercules' 
-    AND last_name between 'BA' and 'BZ'
+    AND last_name LIKE 'B%'
 
 -- 6. List all employees in the Sales department, 
 -- including their employee number, last name, first name, and department name. 
-
+SELECT employees.emp_no, employees.last_name, employees.first_name,
+departments.dept_name
+FROM employees
+INNER JOIN dept_emp ON dept_emp.emp_no=employees.emp_no
+INNER JOIN departments on departments.dept_no=dept_emp.dept_no
+WHERE dept_name='Sales';
 
 -- 7. List all employees in the Sales and Development departments, 
 -- including their employee number, last name, first name, and department name.
