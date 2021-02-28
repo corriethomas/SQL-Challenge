@@ -1,9 +1,9 @@
 -- Delete these tables if they already exist
-DROP TABLE IF EXISTS departments;
 DROP TABLE IF EXISTS dept_emp;
 DROP TABLE IF EXISTS dept_manager;
-DROP TABLE IF EXISTS employees;
 DROP TABLE IF EXISTS salaries;
+DROP TABLE IF EXISTS departments;
+DROP TABLE IF EXISTS employees;
 DROP TABLE IF EXISTS titles;
 
 -- Create new tables
@@ -84,8 +84,7 @@ INNER JOIN departments ON departments.dept_no=dept_emp.dept_no;
 -- whose first name is "Hercules" and last names begin with "B."
 SELECT first_name, last_name, sex
 FROM employees
-WHERE first_name='Hercules' 
-    AND last_name LIKE 'B%'
+WHERE first_name='Hercules' AND last_name LIKE 'B%'
 
 -- 6. List all employees in the Sales department, 
 -- including their employee number, last name, first name, and department name. 
